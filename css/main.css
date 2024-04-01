@@ -679,6 +679,9 @@ footer .copywrite {
     z-index: 1;
     opacity: 50%;
   }
+  .about {
+    margin-bottom: 20em;
+  }
   .about .wrapper .about_me {
     width: 90%;
     display: flex;
