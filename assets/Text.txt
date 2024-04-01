@@ -1,0 +1,4 @@
+Button color: #F96900
+text color: Black
+Faruque: #FC472E
+nav bar color: #EFEFEF
