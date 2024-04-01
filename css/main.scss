@@ -274,6 +274,7 @@ section {
             p {
                 width: 60%;
                 line-height: 1.6;
+
             }
 
             
@@ -300,11 +301,21 @@ section {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            gap: 7em;
+            gap: 5em;
+            
+
+
+            .left {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            } 
 
             .left img {
-                align-self: center;
-                width: 100%;
+                
+                width: 80%;
+                border-radius: 2em;
+                
             }
             .right {
                 display: flex;
@@ -321,6 +332,13 @@ section {
                 p {
                     margin-top: 2.5em;
                     line-height: 2.5em;
+                    font-size: 1.7rem;
+
+
+                    span {
+                        font-weight: 700;
+                        color: #ff2828;
+                    }
                     
                 }
             }
@@ -782,11 +800,20 @@ footer {
                 justify-content: space-between;
                 align-items: center;
                 margin: auto;
+                
 
                 .left {
                     width: 40%;
                     
+                    
                 }
+
+                .left img {
+                    width: 100%;
+                
+                }
+
+
                 .right {
                     width: 60%;
                    
@@ -794,8 +821,10 @@ footer {
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: start;
+                    
                    
                     p {
+                        margin-top: 1em ;
                         text-align: start;
                         width: 100%;
                     }
@@ -1029,6 +1058,11 @@ footer {
                 //border: 1px solid red;
                 .left {
                     width: 40%;
+                    //border: 1px solid red;
+                    
+                }
+                .left img {
+                    width: 90%;
                     
                 }
                 .right {
