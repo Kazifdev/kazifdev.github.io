@@ -48,13 +48,23 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid var(--primary-color);
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5.8em;
+}
 header .wrapper {
+  position: fixed;
+  width: 90%;
+  z-index: 1000;
   background-color: var(--header-color);
   padding: 1em 2.8em;
   border-radius: 5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 1px 5px 4px 2px rgba(128, 128, 128, 0.186);
 }
 header .wrapper img {
   width: 90%;
@@ -84,6 +94,9 @@ header .wrapper .header_cta:hover {
   z-index: -2;
 }
 
+main {
+  padding-top: 8em;
+}
 main .wrapper {
   margin-top: 2em;
   position: relative;
@@ -184,6 +197,7 @@ main .wrapper .hero h1 span {
 }
 main .wrapper .hero p {
   align-self: center;
+  font-weight: 500;
 }
 main .wrapper .hero .intro_cta {
   color: white;
@@ -229,6 +243,7 @@ section .work_flow .flow .icon_intro h2 {
 }
 section .work_flow .flow p {
   width: 60%;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 section .work_flow .flow:hover {
@@ -237,8 +252,10 @@ section .work_flow .flow:hover {
   border-radius: 1em;
 }
 
+.about .wrapper {
+  margin-top: 15em;
+}
 .about .wrapper .about_me {
-  margin-top: 8em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -276,7 +293,8 @@ section .work_flow .flow:hover {
 }
 
 .tech .wrapper {
-  margin-top: 10em;
+  margin-top: 15em;
+  margin-bottom: 15em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -297,9 +315,15 @@ section .work_flow .flow:hover {
 }
 .tech .wrapper .tech_icon a {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  gap: 0.5em;
   transition: 0.5s;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
 }
 .tech .wrapper .tech_icon a:hover {
   transform: scale(1.0125) translateY(-15px);
@@ -315,58 +339,68 @@ section .work_flow .flow:hover {
   margin-top: 15em;
   margin-bottom: 15em;
 }
-.projects h2 {
+.projects .wrapper h2 {
   font-size: 2.7rem;
   text-align: center;
-  margin-bottom: 3em;
+  margin-bottom: 0.5em;
   text-decoration: underline;
 }
-.projects .projects_flow {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.projects .wrapper p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.projects .wrapper .projects_flow {
+  margin-top: 12em;
+}
+.projects .wrapper .projects_flow .project_flow {
+  width: 100%;
+  display: grid;
+  gap: 2em;
   align-items: center;
-  gap: 7.5em;
-}
-.projects .projects_flow .project_flow {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-  text-align: start;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  margin-bottom: 100px;
   background-color: rgba(255, 255, 255, 0.668);
-  border-radius: 2em;
-  box-shadow: 2px 4px 5px 4px rgba(128, 128, 128, 0.349);
 }
-.projects .projects_flow .project_flow .round_img {
+.projects .wrapper .projects_flow .project_flow .round_img {
   width: 100%;
-  border-radius: 2em;
-  padding: 1.2em;
+  border-radius: 0.5em;
+  box-shadow: 2px 2px 3px 2px rgba(194, 194, 194, 0.457);
 }
-.projects .projects_flow .project_flow .padding {
-  margin-left: 2.3em;
-  margin-right: 2.3em;
-  margin-bottom: 2.5em;
+.projects .wrapper .projects_flow .project_flow .details .project_intro h3, .projects .wrapper .projects_flow .project_flow .details .project_intro p {
+  text-align: center;
 }
-.projects .projects_flow .project_flow .project_intro {
-  margin-bottom: 3.5em;
+.projects .wrapper .projects_flow .project_flow .details .project_intro h3 {
+  font-size: 2rem;
 }
-.projects .projects_flow .project_flow .project_intro h3 {
-  font-size: 2.5rem;
-  font-weight: 600;
+.projects .wrapper .projects_flow .project_flow .details .project_intro p {
+  font-size: 1.7rem;
+  line-height: 1.8em;
+  max-width: 90%;
+  margin: 0 auto;
 }
-.projects .projects_flow .project_flow .project_intro p {
-  line-height: 2.3em;
+@media only screen and (min-width: 1100px) {
+  .projects .wrapper .projects_flow .project_flow .details .project_intro {
+    padding-left: 3em;
+  }
+  .projects .wrapper .projects_flow .project_flow .details .project_intro h3, .projects .wrapper .projects_flow .project_flow .details .project_intro p {
+    text-align: left;
+  }
+  .projects .wrapper .projects_flow .project_flow .details .project_intro p {
+    font-size: 1.7rem;
+    line-height: 1.8em;
+    max-width: 100%;
+  }
 }
-.projects .projects_flow .project_flow .project_cta {
+.projects .wrapper .projects_flow .project_flow .project_cta {
+  margin-top: 3.8em;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 2em;
 }
-.projects .projects_flow .project_flow .project_cta .btn {
+.projects .wrapper .projects_flow .project_flow .project_cta .btn {
   border: 0;
   font-size: 1.8rem;
   color: white;
@@ -376,28 +410,151 @@ section .work_flow .flow:hover {
   border-radius: 2em;
   cursor: pointer;
 }
-.projects .projects_flow .project_flow .project_cta .btn:hover {
+.projects .wrapper .projects_flow .project_flow .project_cta .btn:hover {
   background-color: #fb8633;
 }
-.projects .projects_flow .project_flow .project_cta .btn_github {
+.projects .wrapper .projects_flow .project_flow .project_cta .btn_github {
   cursor: pointer;
   border: 0;
   font-weight: 500;
   border-radius: 3em;
   font-size: 2.2rem;
 }
-.projects .projects_flow .project_flow .project_cta .btn_github img {
+.projects .wrapper .projects_flow .project_flow .project_cta .btn_github img {
   width: 1.2em;
 }
-.projects .projects_flow .project_flow .project_cta .btn_github img {
+.projects .wrapper .projects_flow .project_flow .project_cta .btn_github img {
   display: inline-block;
   transition: 0.5s;
 }
-.projects .projects_flow .project_flow .project_cta .btn_github img:hover {
+.projects .wrapper .projects_flow .project_flow .project_cta .btn_github img:hover {
   transform: scale(1.1) translateY(-15px);
+}
+@media only screen and (min-width: 1100px) {
+  .projects .wrapper .projects_flow .project_flow .project_cta {
+    padding-left: 3em;
+    justify-content: left;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .projects .wrapper .projects_flow .project_flow {
+    margin-bottom: 150px;
+  }
+  .projects .wrapper .projects_flow .project2 .details {
+    order: -1;
+  }
+  .projects .wrapper .projects_flow .project2 .details .project_intro {
+    padding-right: 3em;
+  }
+  .projects .wrapper .projects_flow .project2 .details .project_intro h3, .projects .wrapper .projects_flow .project2 .details .project_intro p {
+    text-align: right;
+  }
+  .projects .wrapper .projects_flow .project2 .details .project_cta {
+    justify-content: right;
+    align-items: end;
+    padding-right: 3em;
+  }
+}
+
+.testimonials .wrapper h2 {
+  font-size: 2.7rem;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 3em;
+}
+.testimonials .wrapper .testimonial-container {
+  margin-top: 20em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+  box-shadow: 3px 3px 5px 10px rgba(246, 246, 246, 0.457);
+  color: #333;
+  border-radius: 15px;
+  margin: 20px auto;
+  padding: 50px 80px;
+  min-height: 430px;
+  position: relative;
+}
+.testimonials .wrapper .testimonial-container .stars {
+  font-size: 14px;
+}
+.testimonials .wrapper .testimonial-container .testimonial {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  height: 100%;
+  line-height: 28px;
+  margin: 0;
+}
+.testimonials .wrapper .testimonial-container .user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.testimonials .wrapper .testimonial-container .user .user-image {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.testimonials .wrapper .testimonial-container .user .user-details {
+  text-align: center;
+}
+.testimonials .wrapper .testimonial-container .user .username {
+  margin: 0;
+  font-size: 14px;
+}
+.testimonials .wrapper .testimonial-container .user .role {
+  margin: 0;
+  font-size: 12px;
+}
+.testimonials .wrapper .testimonial-container .progress-dots {
+  display: flex;
+  gap: 5px;
+}
+.testimonials .wrapper .testimonial-container .progress-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+.testimonials .wrapper .testimonial-container .progress-dot.active {
+  background-color: #555;
+}
+.testimonials .wrapper .testimonial-container .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.testimonials .wrapper .testimonial-container .btn:hover {
+  background-color: #eee;
+}
+.testimonials .wrapper .testimonial-container #btn-prev {
+  left: 25px;
+}
+.testimonials .wrapper .testimonial-container #btn-next {
+  right: 25px;
 }
 
 footer {
+  margin-top: 20em;
   background-color: rgba(239, 239, 239, 0.2745098039);
   display: flex;
   flex-direction: column;
@@ -484,16 +641,13 @@ footer .copywrite {
     width: 100%;
   }
   section .work_flow .design, section .work_flow .develop {
-    border-right: 1px dashed rgb(237, 237, 237);
+    border-right: 1px solid rgb(237, 237, 237);
   }
   .about .wrapper .about_me .right {
     width: 100%;
   }
   .about .wrapper .about_me .right p {
     text-align: center;
-    width: 80%;
-  }
-  .projects .wrapper .projects_flow .project_flow {
     width: 80%;
   }
   footer p {
@@ -506,7 +660,7 @@ footer .copywrite {
     display: block;
   }
   header .wrapper nav ul {
-    padding-left: 8em;
+    margin-left: 8em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -515,7 +669,7 @@ footer .copywrite {
   }
   header .wrapper nav ul li a {
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     letter-spacing: 0.13em;
   }
@@ -573,48 +727,14 @@ footer .copywrite {
     text-align: start;
     width: 100%;
   }
-  .projects .wrapper .projects_flow {
-    gap: 14em;
+  .testimonials .wrapper h2 {
+    font-size: 2.7rem;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 3em;
   }
-  .projects .wrapper .projects_flow .project_flow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5em;
-    text-align: start;
-    width: 100%;
-    border-radius: none;
-    box-shadow: none;
-  }
-  .projects .wrapper .projects_flow .project_flow .round_img {
-    width: 52%;
-    border-radius: 2em;
-    box-shadow: 2px 4px 5px 4px rgba(128, 128, 128, 0.349);
-  }
-  .projects .wrapper .projects_flow .project_flow .project_intro {
-    margin-top: 0;
-  }
-  .projects .wrapper .projects_flow .project_flow .project_intro h3 {
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-  .projects .wrapper .projects_flow .project_flow .project_intro p {
-    font-size: 1.6rem;
-    line-height: 2.3em;
-  }
-  .projects .wrapper .projects_flow .project_flow .project_cta .btn {
-    padding: 0.7em 0.9em;
-    font-size: 1.4rem;
-  }
-  .projects .wrapper .projects_flow #develop {
-    flex-direction: row-reverse;
-  }
-  .projects .wrapper .projects_flow #develop .project_intro {
-    text-align: right;
-  }
-  .projects .wrapper .projects_flow #develop .project_cta {
-    flex-direction: row-reverse;
+  .testimonials .wrapper .testimonial-container {
+    max-width: 70%;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -625,6 +745,9 @@ footer .copywrite {
   header {
     margin-left: 2.8em;
     margin-right: 2.8em;
+  }
+  header .wrapper {
+    width: 96%;
   }
   main:before {
     content: "";
@@ -681,18 +804,6 @@ footer .copywrite {
   section .wrapper .flow p {
     width: 100%;
   }
-  .about:before {
-    content: "";
-    position: absolute;
-    background: url("/assets/round.svg") no-repeat;
-    width: 130px;
-    height: 70px;
-    bottom: -50%;
-    left: 100rem;
-    opacity: 100%;
-    z-index: 1;
-    opacity: 50%;
-  }
   .about {
     margin-bottom: 20em;
   }
@@ -725,21 +836,5 @@ footer .copywrite {
     width: 100%;
     height: 6.2px;
     background-color: var(--primary-color);
-  }
-  .projects .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5.5em;
-  }
-  .projects .wrapper .projects_flow {
-    width: 90%;
-  }
-  .projects .wrapper .projects_flow .project_flow .padding {
-    background-image: linear-gradient(to right, #F8F8F8, rgba(255, 255, 255, 0));
-    border-radius: 0.8em;
-    box-shadow: 2px 2px 3px 2px #e3e3e3;
-    padding: 1.8em;
   }
 }/*# sourceMappingURL=main.css.map */
