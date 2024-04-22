@@ -363,8 +363,8 @@ section .work_flow .flow:hover {
 }
 .projects .wrapper .projects_flow .project_flow .round_img {
   width: 100%;
-  border-radius: 0.5em;
-  box-shadow: 2px 2px 3px 2px rgba(194, 194, 194, 0.457);
+  border-radius: 0.3em;
+  box-shadow: 2px 3px 3px 2px rgb(194, 194, 194);
 }
 .projects .wrapper .projects_flow .project_flow .details .project_intro h3, .projects .wrapper .projects_flow .project_flow .details .project_intro p {
   text-align: center;
@@ -747,7 +747,8 @@ footer .copywrite {
     margin-right: 2.8em;
   }
   header .wrapper {
-    width: 96%;
+    width: 98%;
+    max-width: 1300px;
   }
   main:before {
     content: "";
