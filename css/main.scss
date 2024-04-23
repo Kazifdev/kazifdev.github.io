@@ -81,6 +81,21 @@ header {
             background-color: #fb8633 ;
         }
 
+        .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.2em;
+
+            a img {
+                width: 2em;
+                cursor: pointer;
+                
+            }
+        }
+
+        
+
     }
 
 }
@@ -934,8 +949,6 @@ footer {
 
     
     header {
-       
-        
         .wrapper {
             nav {
                 display: block;

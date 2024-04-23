@@ -82,6 +82,16 @@ header .wrapper .header_cta {
 header .wrapper .header_cta:hover {
   background-color: #fb8633;
 }
+header .wrapper .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2em;
+}
+header .wrapper .right a img {
+  width: 2em;
+  cursor: pointer;
+}
 
 .bg {
   background: url(/img/background.png) no-repeat center center;
