@@ -969,4 +969,7 @@ footer .copywrite {
     height: 6.2px;
     background-color: var(--primary-color);
   }
+  .testimonials {
+    margin-top: 22em;
+  }
 }/*# sourceMappingURL=main.css.map */
