@@ -235,7 +235,7 @@ main {
   padding-top: 8em;
 }
 main .wrapper {
-  margin-top: 2em;
+  margin-top: -4em;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -243,12 +243,88 @@ main .wrapper {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10em;
+  overflow: hidden;
 }
-main .wrapper .circle {
+main .wrapper .container {
+  display: grid;
   width: 100%;
+  place-items: center;
   position: absolute;
   z-index: -1;
   top: 8em;
+  --circleDiameter: 38em;
+  --planets: calc(var(--circleDiameter) / 8);
+}
+main .wrapper .hero-circle {
+  position: relative;
+  top: 7px;
+  left: 5px;
+  width: var(--circleDiameter);
+  height: var(--circleDiameter);
+}
+main .wrapper .hero-rotate {
+  position: relative;
+  top: -7px;
+  left: -7px;
+  width: 100%;
+  height: 100%;
+  border: 3px rgba(207, 207, 207, 0.6078431373);
+  border-style: dashed;
+  border-radius: 50%;
+  animation: rotate 30s linear infinite;
+}
+main .wrapper .planet {
+  position: absolute;
+  width: var(--planets);
+  aspect-ratio: 1;
+  animation: maintain 30s linear infinite;
+}
+main .wrapper .planet:nth-child(1) {
+  top: calc(-1 * var(--planets) / 2);
+  left: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+}
+main .wrapper .planet:nth-child(2) {
+  top: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  right: calc(-1 * var(--planets) / 2);
+}
+main .wrapper .planet:nth-child(3) {
+  top: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  left: calc(-1 * var(--planets) / 2);
+}
+main .wrapper .planet:nth-child(4) {
+  left: calc(var(--circleDiameter) / 2 - var(--planets) / 2 - 5px);
+  bottom: calc(-1 * var(--planets) / 2);
+}
+main .wrapper .planet > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  animation: scale 1s linear infinite alternate;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes maintain {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 main .wrapper ul {
   margin-top: 9em;
@@ -300,13 +376,12 @@ main .wrapper .mouse::before {
 }
 main .wrapper .hero {
   text-align: center;
-  margin-top: 20em;
-  margin-left: 2em;
+  margin-top: 16.5em;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 4em;
+  gap: 2.5em;
   align-items: center;
   z-index: 1;
 }
@@ -318,14 +393,18 @@ main .wrapper .hero .intro {
   line-height: 0.5em;
 }
 main .wrapper .hero h2 {
-  font-size: 2.8em;
+  font-size: 2.5em;
   font-weight: 500;
 }
+main .wrapper .hero h2 span img {
+  width: 4%;
+  margin-right: 0.15em;
+}
 main .wrapper .hero .intro:nth-of-type(1) {
-  align-items: start;
+  align-items: center;
 }
 main .wrapper .hero h1 {
-  font-size: 3.4em;
+  font-size: 3.25em;
   font-weight: 600;
   letter-spacing: 0.112em;
 }
@@ -733,17 +812,24 @@ footer .copywrite {
 }
 
 @media only screen and (min-width: 700px) {
-  main .wrapper .circle {
-    margin-top: -3em;
-    width: 50em;
-    height: 50em;
+  main .wrapper .container {
+    display: grid;
+    width: 100%;
+    place-items: center;
+    position: absolute;
+    z-index: -1;
+    top: 8em;
+    --circleDiameter: 50em;
+    --planets: calc(var(--circleDiameter) / 8);
   }
   main .wrapper .hero, main .wrapper ul, main .wrapper .mouse {
     margin-top: 20em;
-    margin-left: 1.9em;
+  }
+  main .wrapper .hero {
+    gap: 5em;
   }
   main .wrapper .hero .intro h2 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
   }
   main .wrapper .hero .intro h1 {
     font-size: 4.2rem;
@@ -873,13 +959,8 @@ footer .copywrite {
     max-width: 1400px;
     margin: 2em auto;
   }
-  header {
-    margin-left: 2.8em;
-    margin-right: 2.8em;
-  }
   header .wrapper {
-    width: 98%;
-    max-width: 1300px;
+    width: 90%;
   }
   main:before {
     content: "";
@@ -894,20 +975,24 @@ footer .copywrite {
   main .wrapper {
     position: relative;
   }
-  main .wrapper .circle {
-    margin-top: -2em;
-    width: 53em;
-    height: 53em;
+  main .wrapper .container {
+    display: grid;
+    width: 100%;
+    place-items: center;
+    position: absolute;
+    z-index: -1;
+    top: 8em;
+    --circleDiameter: 50em;
+    --planets: calc(var(--circleDiameter) / 7.5);
   }
   main .wrapper .hero, main .wrapper ul, main .wrapper .mouse {
     margin-top: 20em;
-    margin-left: 1.9em;
   }
   main .wrapper .hero {
     margin-top: 21em;
   }
   main .wrapper .hero .intro h2 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
   }
   main .wrapper .hero .intro h1 {
     font-size: 4.2rem;
@@ -920,7 +1005,7 @@ footer .copywrite {
     transform: scale(1.1) translatex(-15px);
   }
   main .wrapper .mouse {
-    margin-top: 13em;
+    margin-top: 20em;
   }
   section .wrapper {
     margin-top: 18em;
